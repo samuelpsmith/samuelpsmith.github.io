@@ -53,7 +53,7 @@
             }
         </script>
     </head>
-    <body>
+    <body class="page-home">
         <a class="skip-link" href="#main-content">Skip to content</a>
         <header class="site-header">
             <nav class="nav-inner" aria-label="Primary navigation">
@@ -89,34 +89,28 @@
                     </div>
                 </div>
 
-                <div class="hero-visual" aria-hidden="true">
-                    <div class="visual-card">
-                        <svg class="signal-figure" viewBox="0 0 620 470" role="presentation">
-                            <line x1="30" y1="235" x2="590" y2="235" stroke="#17343a" stroke-opacity="0.16" stroke-width="2" />
-                            <line x1="310" y1="32" x2="310" y2="438" stroke="#17343a" stroke-opacity="0.1" stroke-width="2" />
-                            <path
-                                d="M30 235 C110 235 128 95 222 95 C315 95 333 376 426 376 C520 376 538 235 590 235"
-                                stroke="#d1495b"
-                                stroke-width="7"
-                            />
-                            <path
-                                d="M30 235 C110 235 128 376 222 376 C315 376 333 95 426 95 C520 95 538 235 590 235"
-                                stroke="#00798c"
-                                stroke-width="7"
-                            />
-                            <path
-                                d="M30 235 C105 235 126 282 200 292 C266 301 282 194 344 184 C410 173 431 235 590 235"
-                                stroke="#17343a"
-                                stroke-width="5"
-                            />
-                            <circle cx="222" cy="95" r="9" fill="#d1495b" />
-                            <circle cx="222" cy="376" r="9" fill="#00798c" />
-                            <circle cx="344" cy="184" r="8" fill="#17343a" />
-                        </svg>
-                    </div>
+                <div class="hero-visual">
+                    <figure class="visual-card lab-frame">
+                        <video
+                            class="research-video"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                            poster="assets/video/molecular-trajectories-poster.png"
+                            aria-label="Animated molecular trajectory visualization"
+                        >
+                            <source src="assets/video/molecular-trajectories.mp4" type="video/mp4" />
+                            Your browser does not support embedded video.
+                        </video>
+                        <figcaption class="video-caption">
+                            Molecular trajectories · research visualization
+                        </figcaption>
+                    </figure>
                     <div class="visual-note">
-                        Differential signals reveal structure that is hidden in the underlying
-                        optical response.
+                        A small piece of the actual work: less stock photography, more molecules in
+                        motion.
                     </div>
                 </div>
             </section>
@@ -221,5 +215,12 @@
                 </ul>
             </div>
         </footer>
+        <script>
+            const researchVideo = document.querySelector(".research-video");
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                researchVideo.removeAttribute("autoplay");
+                researchVideo.pause();
+            }
+        </script>
     </body>
 </html>
