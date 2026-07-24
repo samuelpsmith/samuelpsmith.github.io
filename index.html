@@ -71,57 +71,48 @@
         </header>
 
         <main id="main-content">
-            <section class="hero container">
-                <div class="hero-copy">
-                    <p class="eyebrow">Inorganic chemistry · molecular spectroscopy</p>
-                    <h1>Following excited states through symmetry, time, and polarization.</h1>
-                    <p class="hero-lead">
-                        I am Samuel P. Smith, a Chemistry Ph.D. candidate at the University of New
-                        Mexico. I build spectroscopic instruments and software to understand how
-                        molecular structure controls optical and magneto-optical behavior.
-                    </p>
-                    <p class="status-line">
-                        Ph.D. expected December 2027 · Preparing for postdoctoral research
-                    </p>
-                    <div class="actions">
-                        <a class="button" href="archive.html">Explore research</a>
-                        <a class="button button-secondary" href="assets/Smith_cv_web.pdf">Download CV</a>
-                    </div>
-                </div>
-
-                <div class="hero-visual">
-                    <figure class="visual-card lab-frame">
-                        <div class="video-stage">
-                            <video
-                                id="research-animation"
-                                class="research-video"
-                                autoplay
-                                muted
-                                loop
-                                playsinline
-                                preload="auto"
-                                poster="assets/video/molecular-trajectories-poster.png"
-                                aria-label="Animated molecular trajectory visualization"
-                            >
-                                <source src="assets/video/molecular-trajectories.mp4" type="video/mp4" />
-                                Your browser does not support embedded video.
-                            </video>
-                            <button
-                                class="video-toggle"
-                                type="button"
-                                aria-controls="research-animation"
-                                aria-pressed="false"
-                            >
-                                Play animation
-                            </button>
+            <section class="hero-video">
+                <video
+                    id="research-animation"
+                    class="hero-background-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                    poster="assets/video/molecular-trajectories-poster.png"
+                    aria-label="Animated molecular trajectory visualization"
+                >
+                    <source src="assets/video/molecular-trajectories.mp4" type="video/mp4" />
+                    Your browser does not support embedded video.
+                </video>
+                <div class="container hero-video-content">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Inorganic chemistry · molecular spectroscopy</p>
+                        <h1>Following excited states through symmetry, time, and polarization.</h1>
+                        <p class="hero-lead">
+                            I am Samuel P. Smith, a Chemistry Ph.D. candidate at the University of New
+                            Mexico. I build spectroscopic instruments and software to understand how
+                            molecular structure controls optical and magneto-optical behavior.
+                        </p>
+                        <p class="status-line">
+                            Ph.D. expected December 2027 · Preparing for postdoctoral research
+                        </p>
+                        <div class="actions">
+                            <a class="button" href="archive.html">Explore research</a>
+                            <a class="button button-secondary" href="assets/SMITH_CV.pdf">Download CV</a>
                         </div>
-                        <figcaption class="video-caption">
-                            Molecular trajectories · research visualization
-                        </figcaption>
-                    </figure>
-                    <div class="visual-note">
-                        A small piece of the actual work: less stock photography, more molecules in
-                        motion.
+                    </div>
+                    <div class="hero-video-meta">
+                        <span>Molecular trajectories · research visualization</span>
+                        <button
+                            class="video-toggle"
+                            type="button"
+                            aria-controls="research-animation"
+                            aria-pressed="false"
+                        >
+                            Play animation
+                        </button>
                     </div>
                 </div>
             </section>
@@ -227,7 +218,7 @@
             </div>
         </footer>
         <script>
-            const researchVideo = document.querySelector(".research-video");
+            const researchVideo = document.querySelector("#research-animation");
             const videoToggle = document.querySelector(".video-toggle");
             const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
