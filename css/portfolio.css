@@ -334,6 +334,34 @@ main {
   object-fit: cover;
 }
 
+.video-stage {
+  position: relative;
+}
+
+.video-toggle {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 2;
+  min-height: 2.25rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(23, 52, 58, 0.45);
+  color: var(--ink);
+  background: rgba(255, 253, 248, 0.92);
+  box-shadow: 0.2rem 0.25rem 0 rgba(23, 52, 58, 0.12);
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.video-toggle:hover {
+  color: var(--white);
+  background: var(--ink);
+}
+
 .video-caption {
   position: absolute;
   bottom: 0.75rem;

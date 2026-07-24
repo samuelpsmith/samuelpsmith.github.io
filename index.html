@@ -91,19 +91,30 @@
 
                 <div class="hero-visual">
                     <figure class="visual-card lab-frame">
-                        <video
-                            class="research-video"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata"
-                            poster="assets/video/molecular-trajectories-poster.png"
-                            aria-label="Animated molecular trajectory visualization"
-                        >
-                            <source src="assets/video/molecular-trajectories.mp4" type="video/mp4" />
-                            Your browser does not support embedded video.
-                        </video>
+                        <div class="video-stage">
+                            <video
+                                id="research-animation"
+                                class="research-video"
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                                preload="auto"
+                                poster="assets/video/molecular-trajectories-poster.png"
+                                aria-label="Animated molecular trajectory visualization"
+                            >
+                                <source src="assets/video/molecular-trajectories.mp4" type="video/mp4" />
+                                Your browser does not support embedded video.
+                            </video>
+                            <button
+                                class="video-toggle"
+                                type="button"
+                                aria-controls="research-animation"
+                                aria-pressed="false"
+                            >
+                                Play animation
+                            </button>
+                        </div>
                         <figcaption class="video-caption">
                             Molecular trajectories · research visualization
                         </figcaption>
@@ -217,10 +228,35 @@
         </footer>
         <script>
             const researchVideo = document.querySelector(".research-video");
-            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            const videoToggle = document.querySelector(".video-toggle");
+            const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            function updateVideoControl() {
+                const isPlaying = !researchVideo.paused;
+                videoToggle.textContent = isPlaying ? "Pause animation" : "Play animation";
+                videoToggle.setAttribute("aria-pressed", String(isPlaying));
+            }
+
+            function toggleVideo() {
+                if (researchVideo.paused) {
+                    researchVideo.play().catch(updateVideoControl);
+                } else {
+                    researchVideo.pause();
+                }
+            }
+
+            videoToggle.addEventListener("click", toggleVideo);
+            researchVideo.addEventListener("click", toggleVideo);
+            researchVideo.addEventListener("play", updateVideoControl);
+            researchVideo.addEventListener("pause", updateVideoControl);
+
+            if (reduceMotion) {
                 researchVideo.removeAttribute("autoplay");
                 researchVideo.pause();
+            } else {
+                researchVideo.play().catch(updateVideoControl);
             }
+            updateVideoControl();
         </script>
     </body>
 </html>
