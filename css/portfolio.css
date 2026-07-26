@@ -883,81 +883,13 @@ main {
   top: 2rem;
 }
 
-.portrait-placeholder {
-  position: relative;
+.portrait-photo {
+  width: calc(100% + 0.7rem);
   aspect-ratio: 4 / 5;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  flex-direction: column;
+  display: block;
   margin: -0.35rem -0.35rem 1.6rem;
-  padding: 1.2rem;
-  overflow: hidden;
-  border: 1px dashed rgba(23, 52, 58, 0.38);
-  background:
-    linear-gradient(145deg, rgba(0, 121, 140, 0.08), rgba(209, 73, 91, 0.08)),
-    repeating-linear-gradient(
-      -12deg,
-      transparent 0,
-      transparent 1.2rem,
-      rgba(23, 52, 58, 0.035) 1.2rem,
-      rgba(23, 52, 58, 0.035) 1.28rem
-    ),
-    var(--paper);
-}
-
-.portrait-placeholder::before,
-.portrait-placeholder::after,
-.portrait-mark {
-  position: absolute;
-  border: 1.5px solid rgba(0, 121, 140, 0.32);
-  border-radius: 48% 52% 46% 54%;
-  content: "";
-}
-
-.portrait-placeholder::before {
-  top: 13%;
-  left: 19%;
-  width: 62%;
-  aspect-ratio: 1;
-}
-
-.portrait-placeholder::after {
-  top: 8%;
-  left: 12%;
-  width: 76%;
-  aspect-ratio: 1;
-  border-color: rgba(209, 73, 91, 0.24);
-  transform: rotate(12deg);
-}
-
-.portrait-mark {
-  top: 18%;
-  left: 26%;
-  width: 48%;
-  aspect-ratio: 1;
-  border-color: rgba(185, 121, 32, 0.38);
-  transform: rotate(-9deg);
-}
-
-.portrait-placeholder span,
-.portrait-placeholder small {
-  position: relative;
-  z-index: 1;
-}
-
-.portrait-placeholder span {
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.portrait-placeholder small {
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  object-fit: cover;
+  object-position: center;
 }
 
 .side-card .plain-list {
@@ -998,9 +930,15 @@ main {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.contact-card {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-card a {
   display: inline-block;
-  margin-top: 1.2rem;
+  margin-top: auto;
+  padding-top: 1.2rem;
   font-weight: 700;
 }
 
