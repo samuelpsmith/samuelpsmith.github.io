@@ -881,6 +881,8 @@ main {
 .side-card {
   position: sticky;
   top: 2rem;
+  width: min(20rem, 100%);
+  justify-self: end;
 }
 
 .portrait-photo {
@@ -1120,6 +1122,7 @@ main {
 
   .side-card {
     position: static;
+    justify-self: start;
   }
 
   .contact-grid {
