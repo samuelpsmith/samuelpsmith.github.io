@@ -885,7 +885,7 @@ main {
 
 .portrait-photo {
   width: calc(100% + 0.7rem);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
   display: block;
   margin: -0.35rem -0.35rem 1.6rem;
   object-fit: cover;
